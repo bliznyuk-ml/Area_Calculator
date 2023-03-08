@@ -1,10 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widh=device-width, initial-scale=1.0">
+    <title>Shape</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 20pt;
+            color: white;
+        }
+
+        header {
+            width: 100%;
+            min-width: 640px;
+            height: 450px;
+            background-color: coral;
+            padding: 5px 20px;
+        }
+
+        datalist {
+            font-size: 20pt;
+        }
+
+        label {
+            text-shadow: brown 5px 5px 5px;
+            display: inline-block;
+            width: 600px;
+        }
+
+        input {
+            margin: 10px;
+            padding: 5px;
+            font-size: 15pt;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: brown 5px 5px 5px;
+            margin: 20px;
+        }
+
+        .sizeA {
+            opacity: 0;
+        }
+
+        .sizeB {
+            opacity: 0;
+        }
+
+        #display {
+            display: flex;
+            width: 60%;
+            border: brown solid 2px;
+            border-radius: 10px;
+            background-color: yellow;
+            color: brown;
+            font-size: 20pt;
+            padding: 10px;
+            margin-top: 10px;
+            /*margin-left: auto;*/
+            margin-right: auto;
+            justify-content: center;
+            line-height: 50px;
+            height: 50px;
+            font-weight: bold;
+        }
+
+        #calculate {
+            display: flex;
+            float: left;
+            height: 73px;
+            line-height: 50px;
+            margin-right: 10px;
+            border-radius: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+        }
+
+        #calculate:hover {
+            background-color: rgb(1, 120, 1);
+        }
+
+        #calculate:active {
+            background-color: green;
+            transform: translateY(2px);
+        }
+
+
+    </style>
 </head>
 <body>
-$END$
+<script src="js/Area_Calculator.js"></script>
+<header>
+    <h1>Area calculator</h1>
+
+
+    <div>
+        <label for="shapes">Select shape
+            <input list="shapes" name="shapes" id="shapes-choice">
+        </label>
+        <datalist id="shapes">
+            <option value="Rectangle">
+            <option value="Square">
+            <option value="Ellipse">
+            <option value="Circle">
+        </datalist>
+        <input type="submit" id="submit" value="Choice"
+               onclick="choice()">
+
+        <div>
+            <label for="sizeA" class="sizeA"></label>
+            <input name="sizeA" id="sizeA" type="text" class="sizeA">
+        </div>
+        <div>
+            <label for="sizeB" class="sizeB"></label>
+            <input name="sizeB" id="sizeB" type="text" class="sizeB">
+        </div>
+
+        <input type="submit" id="calculate" value="Calculate"
+               onclick="calculate()">
+    </div>
+
+    <div id="display"></div>
+</header>
 </body>
 </html>
